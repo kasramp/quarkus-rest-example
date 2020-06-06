@@ -3,7 +3,7 @@
 This project uses Quarkus to build REST APIs. 
 
 For the tutorials check the below links,
-- [LINK](https://google.com)
+- [Building REST APIs with Quarkus](https://www.geekyhacker.com/2020/06/06/building-rest-apis-with-quarkus/)
 
 ## Running the application in dev mode
 
