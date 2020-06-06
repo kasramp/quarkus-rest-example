@@ -1,4 +1,4 @@
-package exceptionhandler;
+package com.madadipouya.quarkus.example.exceptionhandler;
 
 import com.madadipouya.quarkus.example.exception.UserNotFoundException;
 
