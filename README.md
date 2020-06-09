@@ -4,6 +4,7 @@ This project uses Quarkus to build REST APIs.
 
 For the tutorials check the below links,
 - [Building REST APIs with Quarkus](https://www.geekyhacker.com/2020/06/06/building-rest-apis-with-quarkus/)
+- [Use MySQL in Quarkus with Hibernate and Panache](https://www.geekyhacker.com/2020/06/09/use-mysql-in-quarkus-with-hibernate-and-panache/)
 
 ## Running the application in `dev` mode
 
