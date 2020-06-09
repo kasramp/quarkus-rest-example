@@ -10,7 +10,7 @@ For the tutorials check the below links,
 You can run your application in dev mode that enables live coding using:
 
 ```bash
-./mvnw quarkus:dev
+$ ./mvnw quarkus:dev
 ```
 
 The app runs on `localhost:8080`. You can interact with the APIs as follows,
@@ -41,3 +41,13 @@ $ curl --request PUT 'localhost:8080/v1/users/1' --header 'Content-Type: applica
 # delete a user
 $ curl --request DELETE 'localhost:8080/v1/users/2'
 ```
+
+## Debug the application
+
+To debug the app, run the following command first,
+
+```bash
+$ ./mvnw quarkus:dev -Ddebug
+```
+
+This activates debug on port `5005`. Then use your IDE to connect to `localhost:5005` to debug the application.
