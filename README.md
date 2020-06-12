@@ -4,14 +4,30 @@ This project uses Quarkus to build REST APIs.
 
 For the tutorials check the below links,
 - [Building REST APIs with Quarkus](https://www.geekyhacker.com/2020/06/06/building-rest-apis-with-quarkus/)
+- [Use MySQL in Quarkus with Hibernate and Panache](https://www.geekyhacker.com/2020/06/09/use-mysql-in-quarkus-with-hibernate-and-panache/)
+- [How to add Swagger to Quarkus](https://www.geekyhacker.com/2020/06/12/how-to-add-swagger-to-quarkus/)
 
-## Running the application in dev mode
+## Running the application in `dev` mode
 
-You can run your application in dev mode that enables live coding using:
+First start the docker:
+
+```bash
+$ cd docker && docker-compose up -d
+```
+
+Then create tables with some predefined data,
+
+```bash
+$ ./db_initializer.sh
+```
+
+Finally, you can run your application in dev mode that enables live coding using:
 
 ```bash
 $ ./mvnw quarkus:dev
 ```
+
+## Interacting with APIs
 
 The app runs on `localhost:8080`. You can interact with the APIs as follows,
 
@@ -42,7 +58,7 @@ $ curl --request PUT 'localhost:8080/v1/users/1' --header 'Content-Type: applica
 $ curl --request DELETE 'localhost:8080/v1/users/2'
 ```
 
-## Debug the application
+## Debugging the application
 
 To debug the app, run the following command first,
 
