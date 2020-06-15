@@ -29,7 +29,9 @@ $ ./mvnw quarkus:dev
 
 ## Interacting with APIs
 
-The app runs on `localhost:8080`. You can interact with the APIs as follows,
+The app runs on `localhost:8080`. You can interact with the APIs via Swagger `localhost:8080/swagger-ui`
+
+Alternatively you can use CURL as follows,
 
 ```bash
 # get list of users
