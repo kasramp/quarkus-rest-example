@@ -6,6 +6,7 @@ For the tutorials check the below links,
 - [Building REST APIs with Quarkus](https://www.geekyhacker.com/2020/06/06/building-rest-apis-with-quarkus/)
 - [Use MySQL in Quarkus with Hibernate and Panache](https://www.geekyhacker.com/2020/06/09/use-mysql-in-quarkus-with-hibernate-and-panache/)
 - [How to add Swagger to Quarkus](https://www.geekyhacker.com/2020/06/12/how-to-add-swagger-to-quarkus/)
+- [Secure REST APIs in Quarkus using Basic Auth](https://www.geekyhacker.com/2020/06/17/secure-rest-apis-in-quarkus-using-basic-auth/)
 
 ## Running the application in `dev` mode
 
@@ -34,13 +35,13 @@ The app runs on `localhost:8080`. You can interact with the APIs via Swagger `lo
 Alternatively you can use CURL as follows,
 
 ```bash
-# get list of users
-$ curl localhost:8080/v1/users/
+# get list of users (secured, accessible to users with 'ADMIN' or 'USER' role)
+$ curl --anyauth --user leo:1234 localhost:8080/v1/users/
 
-# get a specific user
-$ curl localhost:8080/v1/users/2
+# get a specific user (secured, accessible to users with 'ADMIN' or 'USER' role)
+$ curl --anyauth --user leo:1234 localhost:8080/v1/users/2
 
-# create a user
+# create a user (open)
 $ curl --request POST 'localhost:8080/v1/users' --header 'Content-Type: application/json' \
 --data-raw '{
 	"firstName": "Tom",
@@ -48,16 +49,16 @@ $ curl --request POST 'localhost:8080/v1/users' --header 'Content-Type: applicat
 	"age": 57
 }'
 
-# edit a user
-$ curl --request PUT 'localhost:8080/v1/users/1' --header 'Content-Type: application/json' \
+# edit a user (secured, accessible to users with 'ADMIN' role only)
+$ curl --anyauth --user admin:admin --request PUT 'localhost:8080/v1/users/1' --header 'Content-Type: application/json' \
 --data-raw '{
 	"firstName": "Leonardo",
 	"lastName": "DiCaprio",
 	"age": 46
 }'
 
-# delete a user
-$ curl --request DELETE 'localhost:8080/v1/users/2'
+# delete a user (secured, accessible to users with 'ADMIN' role only)
+$ curl --anyauth --user admin:admin --request DELETE 'localhost:8080/v1/users/2'
 ```
 
 ## Debugging the application
